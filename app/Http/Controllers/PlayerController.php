@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PlayController extends Controller
+class PlayerController extends Controller
 {
     public function index(){
-        return view('play.PlayList');
+        return view('player.PlayerList');
     }
 }

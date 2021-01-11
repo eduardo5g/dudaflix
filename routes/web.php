@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/play', [PlayController::class,'index']);
+Route::get('/player', [PlayController::class,'index'])->name('player.index');
+Route::get('/player', [PlayerController::class,'list'])->name('player.list');
+Route::get('/play/register', [PlayController::class,'register'])->name('play.register');
+Route::get('/play/list', [PlayController::class,'register'])->name('play.register');
 
 Route::get('/catalog', function () {
     $users = User::all();
@@ -29,7 +32,7 @@ Route::get('/catalog', function () {
 
         $videos[$user->name]=(object) $video;
     }
-    return view('index',compact('users','categories','videos'));
+    return view('play.catalog',compact('users','categories','videos'));
 });
 
 Route::get('/', function () {
